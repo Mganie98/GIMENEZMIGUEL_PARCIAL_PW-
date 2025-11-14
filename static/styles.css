@@ -1,0 +1,191 @@
+/* Reset simple */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+   --accent:#3a0cd3; /* acento elegante */
+  --muted:#6b7280;
+  --bg:#fafafa;
+  --card:#ffffff;
+  --glass: rgba(255,255,255,0.7);
+
+}
+body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:#111;line-height:1.5}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+.site-header{background:linear-gradient(90deg, #fff 0%, #f3eef6 100%);box-shadow:0 2px 6px rgba(0,0,0,0.04)}
+.site-header.small{padding:0.6rem 0}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:1rem}
+.logo{font-size:1.25rem;font-weight:700;color:var(--accent)}
+.nav{display:flex;gap:0.75rem}
+.nav-link{padding:0.5rem 0.8rem;text-decoration:none;color:var(--muted);border-radius:8px;transition:all .25s}
+.nav-link:hover{color:#111;background:var(--glass);transform:translateY(-3px)}
+
+.main-content{padding:2rem 0}
+.intro h2{font-size:1.6rem;margin-bottom:0.5rem}
+.resumen{margin-top:1rem;background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(28,20,56,0.04)}
+
+/* Botones animados (cinco estilos distintos) */
+.botones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.8rem;margin-top:1rem}
+.boton{display:inline-flex;align-items:center;justify-content:center;padding:0.9rem 1.2rem;text-decoration:none;background:#111;color:#fff;border-radius:12px;font-weight:600;transition:transform .25s, box-shadow .25s}
+.boton:active{transform:translateY(1px)}
+
+/* Animaciones individuales */
+.btn-anim-1{background:linear-gradient(90deg,var(--accent),#7b61ff);box-shadow:0 8px 24px rgba(201,74,159,0.18)}
+.btn-anim-1:hover{transform:translateY(-6px) scale(1.02)}
+
+.btn-anim-2{background:#111;border:2px solid var(--accent);color:var(--accent)}
+.btn-anim-2:hover{box-shadow:0 12px 24px rgba(0,0,0,0.12);transform:rotate(-2deg) translateY(-6px)}
+
+.btn-anim-3{background:transparent;border:2px dashed var(--muted);color:var(--muted)}
+.btn-anim-3:hover{background:var(--accent);color:#fff;transform:scale(1.03)}
+
+.btn-anim-4{background:linear-gradient(90deg,#24c6dc,#514a9d);}
+.btn-anim-4:hover{filter:brightness(1.05);transform:translateY(-6px)}
+
+.btn-anim-5{background:linear-gradient(90deg,#ffb347,#ffcc33);color:#111}
+.btn-anim-5:hover{animation:btnPulse 0.9s ease-in-out}
+@keyframes btnPulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+
+/* Pie de página */
+.site-footer{margin-top:2rem;padding:1rem 0;background:transparent;text-align:center;color:var(--muted)}
+
+/* Perfil - tabla */
+.trayectoria{width:100%;border-collapse:collapse;margin:1rem 0;background:var(--card);border-radius:8px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.03)}
+.trayectoria th, .trayectoria td{padding:0.75rem 1rem;text-align:left;border-bottom:1px solid #f0eff4}
+.trayectoria thead th{background:linear-gradient(90deg,#faf7fb,#fff);color:var(--muted)}
+
+/* Social icons: color change on hover */
+.socials{display:flex;gap:0.6rem;margin-top:0.5rem}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:var(--card);box-shadow:0 6px 14px rgba(16,24,40,0.04);transition:transform .25s, background .25s}
+.social-link svg{fill:var(--muted);transition:fill .25s, transform .25s}
+.social-link:hover{transform:translateY(-6px)}
+.social-link.s1:hover svg{fill:#1da1f2}
+.social-link.s2:hover svg{fill:#e1306c}
+.social-link.s3:hover svg{fill:#1877f2}
+
+.pdf-link{color:var(--accent);font-weight:600}
+.volver{display:inline-block;margin-top:1rem;color:var(--muted);text-decoration:none}
+.volver:hover{text-decoration:underline}
+
+/* Galería */
+.galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.gal-item{position:relative;overflow:hidden;border-radius:12px;background:var(--card);box-shadow:0 10px 22px rgba(7, 7, 7, 0.04)}
+.gal-item img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .6s ease}
+.gal-item figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,rgba(35, 9, 226, 0.6),transparent);color:#fff;padding:0.9rem;transform:translateY(100%);transition:transform .3s ease}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-item:hover figcaption{transform:translateY(0)}
+
+/* Diferentes animaciones para cada imagen (solo visuales CSS) */
+.g1 img{animation:kenburns 12s ease infinite}
+@keyframes kenburns{0%{transform:scale(1) translateY(0)}50%{transform:scale(1.06) translateY(-6px)}100%{transform:scale(1) translateY(0)}}
+
+.g2 img{animation:rotateSway 8s ease-in-out infinite}
+@keyframes rotateSway{0%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}100%{transform:rotate(-1deg)}}
+
+.g3 img{animation:zoomPulse 10s ease infinite}
+@keyframes zoomPulse{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+
+.g4 img{animation:floatUp 9s ease-in-out infinite}
+@keyframes floatUp{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+.g5 img{animation:skewWave 11s linear infinite}
+@keyframes skewWave{0%{transform:skewX(0)}50%{transform:skewX(1.5deg)}100%{transform:skewX(0)}}
+
+.g6 img{filter:grayscale(.2);transition:filter .4s}
+.g6:hover img{filter:grayscale(0)}
+
+.g7 img{transform-origin:center bottom;animation:pop 14s ease-in-out infinite}
+@keyframes pop{0%{transform:scaleY(1)}50%{transform:scaleY(1.02)}100%{transform:scaleY(1)}}
+
+.g8 img{animation:subtleSpin 40s linear infinite}
+@keyframes subtleSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+/* Blog - posts y animación de aparición (sin JS se reproduce al cargar) */
+.post{background:var(--card);padding:1rem;border-radius:12px;margin:1rem 0;box-shadow:0 10px 22px rgba(16,24,40,0.05)}
+.post-header{width:100%;height:200px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem}
+.article-anim{transform:translateY(20px);opacity:0;animation:slideUp 0.8s ease forwards;animation-delay:0.25s}
+.article-anim:nth-of-type(2){animation-delay:0.45s}
+.article-anim:nth-of-type(3){animation-delay:0.65s}
+@keyframes slideUp{to{transform:translateY(0);opacity:1}}
+
+.leer-mas{display:inline-block;margin-top:0.5rem;padding:0.5rem 0.8rem;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+.leer-mas:hover{filter:brightness(1.05)}
+
+/* Ajustes responsivos */
+@media (max-width:700px){
+  .nav{display:none}
+  .site-header .container{justify-content:center}
+  .gal-item img{height:180px}
+}
+
+/* Preferencias de movimiento reducido */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+/* 1. Botón Cambiante (cambia color y tamaño al hacer clic) */
+.boton-cambiante {
+  background: var(--accent);
+  color: white;
+  padding: 1rem 1.3rem;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+.boton-cambiante:active {
+  background: #7b61ff;
+  transform: scale(1.08);
+}
+
+/* 2. Caja con ciclo de colores */
+.caja-ciclo {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background: var(--accent);
+  animation: cicloColores 6s linear infinite;
+  margin-top: 1rem;
+}
+@keyframes cicloColores {
+  0%   { background: #cd0707; }
+  33%  { background: #2103b6; }
+  66%  { background: #0da1f0; }
+  100% { background: #f113c4; }
+}
+
+/* 3. Texto rotativo 360° continuo */
+.texto-rotativo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: inline-block;
+  animation: girarTexto 10s linear infinite;
+}
+@keyframes girarTexto {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* 4. Cuadro que aumenta su tamaño al hacer hover */
+.cuadro-hover {
+  width: 180px;
+  height: 180px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(59, 37, 198, 0.05);
+  transition: transform .35s ease;
+}
+.cuadro-hover:hover {
+  transform: scale(1.12);
+}
+
+/* 5. Texto animado con velocidad variable */
+.texto-velocidad {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  animation: moverTexto 3s ease-in-out infinite;
+}
+@keyframes moverTexto {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(25px); }
+  100% { transform: translateX(0); }
+}
